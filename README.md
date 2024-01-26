@@ -4,7 +4,7 @@
 
 This is a library webpage implemented with Javascript.
 
-### View here: <https://kennotfindsymbol.github.io/landing-page/index.html>
+### View here: <https://kennotfindsymbol.github.io/odin-library/index.html>
 
 - You can click 'NEW BOOK' to start adding a new book. 
 - Type in title, author, number of pages, have you read it or not. 
