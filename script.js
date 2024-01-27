@@ -5,26 +5,28 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 };
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+    toggleRead() {
+        this.isRead = !this.isRead;
+    }
+    getUnorderedList() {
+        const ul = document.createElement('ul');
+        for (const [key, value] of Object.entries(this)) {
+            const li = document.createElement('li');
+            li.textContent = `${key}: ${value}`;
+            ul.append(li);
+        }
+        return ul;
+    }
 };
 
-Book.prototype.toggleRead = function () {
-    this.isRead = !this.isRead;
-}
 
-Book.prototype.getUnorderedList = function () {
-    const ul = document.createElement('ul');
-    for (const [key, value] of Object.entries(this)) {
-        const li = document.createElement('li');
-        li.textContent = `${key}: ${value}`
-        ul.append(li);
-    }
-    return ul;
-}
 
 function defaultBooks(){
     const defaultBook1 = new Book(
